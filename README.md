@@ -1,2 +1,1 @@
-# cybersecurity-notes
-My cybersecurity learning journey — networking, Linux, Python, and hacking labs
+# Cybersecurity Learning Notes Active learning log. Documenting every step of my journey from zero to a cybersecurity professional. ## This week: Networking fundamentals - OSI model — 7 layers of network communication - TCP/IP — how internet connections work - DNS — how domain names become IP addresses - HTTP/HTTPS — how web traffic works ## Platforms I use - TryHackMe: (link coming) - HackTheBox: (link coming) ## Tools installed - Kali Linux inside VirtualBox - Wireshark - Nmap Updated every day.

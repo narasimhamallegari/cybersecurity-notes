@@ -1,7 +1,7 @@
 # Day 1 — OSI Model Notes
-**Date:** April 3, 2026
-**Source:** Professor Messer N10-008 Network+ : 1.1
-**Platform:** TryHackMe Pre-Security + Kali Linux hands-on practice
+Date: April 3, 2026
+Source: Professor Messer N10-008 Network+: 1.1
+Platform: TryHackMe Pre-Security + Kali Linux hands-on practice
 
 ---
 
@@ -9,9 +9,9 @@
 
 OSI stands for Open Systems Interconnection. It is a 7-layer framework that describes exactly how data travels from one device to another across a network. Every networking professional, security analyst, and hacker uses this model to communicate clearly about where in a system something is happening.
 
-**Why it matters for cybersecurity:** Every single attack targets a specific layer. Knowing the layer tells you what tool to use, how to defend it, and how to explain it to a client or employer.
+Why it matters for cybersecurity: Every single attack targets a specific layer. Knowing the layer tells you what tool to use, how to defend it, and how to explain it to a client or employer.
 
-**Memory trick:** All People Seem To Need Data Processing
+Memory trick: All People Seem To Need Data Processing
 (Application → Presentation → Session → Transport → Network → Data Link → Physical)
 
 ---
@@ -21,132 +21,132 @@ OSI stands for Open Systems Interconnection. It is a 7-layer framework that desc
 ---
 
 ### Layer 7 — Application
-**What it does:** The layer users interact with directly. This is where software communicates with the network.
+What it does: The layer users interact with directly. This is where software communicates with the network.
 
-**Real-world protocols:**
+Real-world protocols:
 - HTTP / HTTPS — web browsing
 - DNS — translating domain names to IP addresses
 - FTP — file transfer
 - SMTP — sending email
 - SSH — secure remote terminal access
 
-**Security attacks at this layer:**
+Security attacks at this layer:
 - SQL Injection — injecting malicious database commands into web forms
 - Cross-Site Scripting (XSS) — injecting malicious scripts into web pages
 - Phishing — deceptive emails that trick users
 - DNS Poisoning — corrupting DNS to redirect traffic to malicious servers
 - Directory Traversal — accessing unauthorized files on a web server
 
-**Business relevance:** Web application attacks happen at Layer 7. 90% of data breaches involve Layer 7 vulnerabilities. Every company with a website needs Layer 7 security.
+Business relevance: Web application attacks happen at Layer 7. 90% of data breaches involve Layer 7 vulnerabilities. Every company with a website needs Layer 7 security.
 
 ---
 
 ### Layer 6 — Presentation
-**What it does:** Translates data between the network and the application. Handles encryption, decryption, and data formatting so both sides can understand each other.
+What it does: Translates data between the network and the application. Handles encryption, decryption, and data formatting so both sides can understand each other.
 
-**Real-world examples:**
+Real-world examples:
 - TLS/SSL encryption — encrypts HTTPS traffic
 - JPEG, PNG, MP4 — file format translation
 - ASCII, Unicode — character encoding
 
-**Security attacks at this layer:**
+Security attacks at this layer:
 - SSL Stripping — forcing a secure HTTPS connection to downgrade to unencrypted HTTP
 - Padding Oracle attacks — exploiting flaws in encryption implementation
 
-**Business relevance:** Every company transmitting sensitive data (credit cards, health records, logins) depends on Layer 6 encryption. Compliance frameworks like PCI-DSS and HIPAA require proper Layer 6 protection.
+Business relevance: Every company transmitting sensitive data (credit cards, health records, logins) depends on Layer 6 encryption. Compliance frameworks like PCI-DSS and HIPAA require proper Layer 6 protection.
 
 ---
 
 ### Layer 5 — Session
-**What it does:** Establishes, manages, and terminates communication sessions between applications. Keeps track of which conversation is which when multiple connections are open simultaneously.
+What it does: Establishes, manages, and terminates communication sessions between applications. Keeps track of which conversation is which when multiple connections are open simultaneously.
 
-**Real-world examples:**
+Real-world examples:
 - Login sessions on websites
 - NetBIOS — Windows session management
 - RPC (Remote Procedure Call) — used in enterprise applications
 
-**Security attacks at this layer:**
+Security attacks at this layer:
 - Session Hijacking — stealing an authenticated session token to impersonate a logged-in user
 - Session Fixation — forcing a user to use a known session ID so the attacker can take over
 
-**Business relevance:** Every web application that has user logins uses Layer 5 sessions. Weak session management is one of the OWASP Top 10 most critical web vulnerabilities.
+Business relevance: Every web application that has user logins uses Layer 5 sessions. Weak session management is one of the OWASP Top 10 most critical web vulnerabilities.
 
 ---
 
 ### Layer 4 — Transport
-**What it does:** Manages end-to-end communication between devices. Breaks data into segments, assigns port numbers, and controls whether delivery is reliable (TCP) or fast (UDP).
+What it does: Manages end-to-end communication between devices. Breaks data into segments, assigns port numbers, and controls whether delivery is reliable (TCP) or fast (UDP).
 
-**Two key protocols:**
+Two key protocols:
 
-**TCP (Transmission Control Protocol)**
+TCP (Transmission Control Protocol)
 - Reliable — guarantees every packet arrives
 - Ordered — packets arrive in the correct sequence
 - Connection-oriented — requires a handshake before data flows
 - Used for: web browsing, email, SSH, file transfers
 - Three-way handshake: SYN → SYN-ACK → ACK
 
-**UDP (User Datagram Protocol)**
+UDP (User Datagram Protocol)
 - Unreliable — no guarantee of delivery
 - No handshake — just sends data immediately
 - Faster than TCP
 - Used for: video streaming, DNS, VoIP, online gaming
 
-**Security attacks at this layer:**
+Security attacks at this layer:
 - Port Scanning — probing a system to find open ports (reconnaissance)
 - SYN Flood — sending thousands of SYN packets to exhaust server resources (DoS attack)
 - UDP Flood — overwhelming a server with UDP packets
 - Firewall bypass techniques — crafting packets to evade security rules
 
-**Business relevance:** Firewalls operate primarily at Layer 4, filtering traffic by port number and protocol. Every network security architecture starts here.
+Business relevance: Firewalls operate primarily at Layer 4, filtering traffic by port number and protocol. Every network security architecture starts here.
 
 ---
 
 ### Layer 3 — Network
-**What it does:** Handles logical addressing and routing. Determines the best path for data to travel from source to destination across multiple networks.
+What it does: Handles logical addressing and routing. Determines the best path for data to travel from source to destination across multiple networks.
 
-**Real-world protocols:**
+Real-world protocols:
 - IP (Internet Protocol) — assigns and routes IP addresses
 - ICMP — used by ping and traceroute
 - OSPF, BGP — routing protocols that determine network paths
 
-**IP Address basics:**
+IP Address basics:
 - IPv4: 32-bit address — example: 192.168.1.1
 - IPv6: 128-bit address — example: 2001:0db8:85a3::8a2e:0370:7334
 - Public IP: visible on the internet
 - Private IP: used inside local networks (192.168.x.x, 10.x.x.x, 172.16.x.x)
 
-**Security attacks at this layer:**
+Security attacks at this layer:
 - IP Spoofing — forging the source IP address to disguise the attacker's identity
 - DDoS (Distributed Denial of Service) — flooding a target with traffic from thousands of sources
 - Man-in-the-Middle (routing) — intercepting traffic between two hosts
 - ICMP Flood (Ping Flood) — overwhelming a target with ping requests
 
-**Business relevance:** Network segmentation (separating sensitive systems from public networks) is a fundamental Layer 3 security control. Required by nearly every compliance framework.
+Business relevance: Network segmentation (separating sensitive systems from public networks) is a fundamental Layer 3 security control. Required by nearly every compliance framework.
 
 ---
 
 ### Layer 2 — Data Link
-**What it does:** Handles communication between devices on the SAME local network. Uses MAC (Media Access Control) addresses to identify devices. Controls how data is placed on and received from the physical medium.
+What it does: Handles communication between devices on the SAME local network. Uses MAC (Media Access Control) addresses to identify devices. Controls how data is placed on and received from the physical medium.
 
-**Real-world examples:**
+Real-world examples:
 - Ethernet — the standard wired LAN protocol
 - Wi-Fi (802.11) — wireless LAN
 - Switches — Layer 2 devices that forward frames by MAC address
 - ARP (Address Resolution Protocol) — maps IP addresses to MAC addresses
 
-**Security attacks at this layer:**
+Security attacks at this layer:
 - ARP Spoofing/Poisoning — attacker sends fake ARP replies to link their MAC to a legitimate IP, enabling man-in-the-middle attacks
 - MAC Flooding — overwhelming a switch's MAC address table to force it into hub mode, making traffic visible to all
 - VLAN Hopping — exploiting misconfigured VLANs to access traffic on other network segments
 
-**Business relevance:** Internal network threats (insider attacks, compromised devices) operate at Layer 2. Switch security configurations and VLAN segmentation are Layer 2 defenses required in enterprise environments.
+Business relevance: Internal network threats (insider attacks, compromised devices) operate at Layer 2. Switch security configurations and VLAN segmentation are Layer 2 defenses required in enterprise environments.
 
 ---
 
 ### Layer 1 — Physical
-**What it does:** The actual physical transmission of raw bits (1s and 0s) over a medium. This includes everything you can physically touch or see.
+What it does: The actual physical transmission of raw bits (1s and 0s) over a medium. This includes everything you can physically touch or see.
 
-**Real-world examples:**
+Real-world examples:
 - Ethernet cables (Cat5e, Cat6)
 - Fiber optic cables
 - Wi-Fi radio signals
@@ -154,14 +154,14 @@ OSI stands for Open Systems Interconnection. It is a 7-layer framework that desc
 - Network interface cards (NICs)
 - Hubs, repeaters
 
-**Security attacks at this layer:**
+Security attacks at this layer:
 - Wiretapping — physically intercepting cable traffic
 - Signal Jamming — disrupting wireless communications
 - Hardware Keyloggers — physical devices that record keystrokes
 - Rogue Access Points — unauthorized Wi-Fi devices that intercept wireless traffic
 - Cable cutting — physically severing network connections (sabotage)
 
-**Business relevance:** Physical security is the first line of defense. Data center security (locked racks, access control), cable management, and preventing unauthorized physical access are all Layer 1 concerns.
+Business relevance: Physical security is the first line of defense. Data center security (locked racks, access control), cable management, and preventing unauthorized physical access are all Layer 1 concerns.
 
 ---
 
@@ -181,14 +181,14 @@ OSI stands for Open Systems Interconnection. It is a 7-layer framework that desc
 
 ## Hands-On Practice Done Today
 
-**Kali Linux terminal command:**
+Kali Linux terminal command:
 ```
 ping google.com
 ```
-**Result:** Received ICMP echo replies from 142.250.x.x
-**What this proves:** ping uses ICMP, which operates at Layer 3 (Network layer). The OS resolved the domain name using DNS (Layer 7) before sending the ping.
+Result: Received ICMP echo replies from 142.250.x.x
+What this proves: ping uses ICMP, which operates at Layer 3 (Network layer). The OS resolved the domain name using DNS (Layer 7) before sending the ping.
 
-**What I observed:** Even a simple ping command uses multiple OSI layers simultaneously — Layer 7 for DNS, Layer 3 for ICMP, Layer 2 for the Ethernet frame, Layer 1 for the physical WiFi signal.
+What I observed: Even a simple ping command uses multiple OSI layers simultaneously — Layer 7 for DNS, Layer 3 for ICMP, Layer 2 for the Ethernet frame, Layer 1 for the physical WiFi signal.
 
 ---
 
@@ -197,7 +197,7 @@ ping google.com
 1. The OSI model is a universal language — every cybersecurity professional worldwide uses these 7 layers to communicate about network problems and attacks
 2. Attacks do not stay in one layer — a successful attack often involves multiple layers simultaneously
 3. Defense in depth means protecting every layer — not just Layer 7 (the application)
-4. As a SOC analyst, when an alert fires you immediately ask: which layer is this attack targeting? That tells you which tool to use and how to respond
-5. As a penetration tester, you systematically test each layer looking for weaknesses
+4. As a SOC analyst, when an alert fires, you immediately ask: Which layer is this attack targeting? That tells you which tool to use and how to respond
+5. As a penetration tester, you systematically test each layer, looking for weaknesses
 
 ---

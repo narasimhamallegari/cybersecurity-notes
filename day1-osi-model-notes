@@ -113,7 +113,7 @@ IP Address basics:
 - IPv4: 32-bit address — example: 192.168.1.1
 - IPv6: 128-bit address — example: 2001:0db8:85a3::8a2e:0370:7334
 - Public IP: visible on the internet
-- Private IP: used inside local networks (192.168.x.x, 10.x.x.x, 172.16.x.x)
+- Private IP: used inside local networks (192.168.x.x, 10. x.x.x, 172.16.x.x)
 
 Security attacks at this layer:
 - IP Spoofing — forging the source IP address to disguise the attacker's identity
@@ -201,3 +201,12 @@ What I observed: Even a simple ping command uses multiple OSI layers simultaneou
 5. As a penetration tester, you systematically test each layer, looking for weaknesses
 
 ---
+## Real Commands Run Today
+
+ping google.com
+Result: 64 bytes from 142.250.80.46 — time=14ms
+Observation: Each ping packet traveled from Newark, NJ, to a 
+Google server and back in 14 milliseconds.
+
+## What I Will Study Next
+Day 2 — TCP/IP Model, Wireshark installation, live packet capture

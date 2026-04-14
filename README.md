@@ -4,3 +4,5 @@ Day 3 — Common ports memorized, first Nmap scan on real server, DNS recon comm
 Day 4 — linuxjourney Grasshopper, Bandit level 4 reached, TryHackMe Linux Fundamentals Part 1 complete, 18 Linux commands memorized
 
 Day 5: DNS record types, HTTP cookies and headers, Python chapters 1-2, first script
+
+Day 6 — Bandit levels 4-7 complete, port scanner built in Python, 10 employers researched 

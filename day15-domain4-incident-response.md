@@ -29,10 +29,9 @@ Technical: Actionable indicators — IP addresses, domains, file hashes
 
 ## First Job Applications Sent Today
 
-Applied to 5 roles:
-[List the companies and roles you applied to]
+Applied to 5 roles
 
-Search terms used: SOC Analyst entry level NJ, Security Analyst junior remote
+Searched terms used: SOC Analyst entry level, Security Analyst junior remote
 
 Target H1B sponsors: Deloitte, IBM, Accenture, Booz Allen Hamilton, Leidos, SAIC
 
